@@ -30,8 +30,13 @@ class Vector2:
 
     def normalize(self):
         magnitude = self.get_magnitude()
-        self.x /= magnitude
-        self.y /= magnitude
+
+        try:
+            self.x /= magnitude
+            self.y /= magnitude
+        except ZeroDivisionError:
+            self.x = 0
+            self.y = 0
 
     # rhs quer dizer Right Hand Side (lado direito)
     def __add__(self, rhs):
