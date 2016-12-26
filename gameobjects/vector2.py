@@ -1,4 +1,4 @@
-import math
+from math import *
 
 
 class Vector2:
@@ -37,6 +37,18 @@ class Vector2:
         except ZeroDivisionError:
             self.x = 0
             self.y = 0
+
+    def get_distance_to(self, p):
+        """Returns the distance to a point.
+
+        @param: A Vector2 or list-like object with at least 2 values.
+        @return: distance
+        """
+        x, y = self._v
+        xx, yy = p
+        dx = xx - x
+        dy = yy - y
+        return sqrt(dx * dx + dy * dy)
 
     # rhs quer dizer Right Hand Side (lado direito)
     def __add__(self, rhs):
