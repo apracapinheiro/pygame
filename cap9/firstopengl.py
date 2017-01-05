@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from math import radians
 
 from OpenGL.GL import *
@@ -77,7 +79,7 @@ class Cube(object):
 
 class Map(object):
     def __init__(self):
-        map_surface = pygame.image.load("labirinto.gif")
+        map_surface = pygame.image.load("map.png")
         map_surface.lock()
 
         w, h = map_surface.get_size()
